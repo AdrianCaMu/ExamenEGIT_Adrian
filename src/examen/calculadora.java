@@ -11,7 +11,7 @@ public class calculadora {
 		System.out.println("Introduce segundo numero a operar: ");
 		int n2 = Integer.parseInt(sc.nextLine());
 		
-		System.out.println("Introduce la operacion que quieres realizar: (suma / resta) ");
+		System.out.println("Introduce la operacion que quieres realizar: (suma / resta / operacion / division) ");
 		String opcion = sc.nextLine();
 		
 		int solucion = 0;
@@ -23,6 +23,12 @@ public class calculadora {
 		case "resta":
 			solucion = restar(n1,n2);
 			break;
+		case "division":
+			solucion = division(n1,n2);
+			break;
+		case "multiplicacion":
+			solucion = multiplicacion(n1,n2);
+			break;
 		default:
 			System.out.println("Error: Operacion no reconocida");
 		}
@@ -30,6 +36,14 @@ public class calculadora {
 		System.out.println("La solucion a la " + opcion + " de " + n1 + " y " + n2 + " es " + solucion);
 		
 		sc.close();
+	}
+
+	private static int multiplicacion(int n1, int n2) {
+		return n1 * n2;
+	}
+
+	private static int division(int n1, int n2) {
+		return n1 / n2;
 	}
 
 	private static int restar(int n1, int n2) {	
